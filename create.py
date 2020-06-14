@@ -16,10 +16,10 @@ def create():
         path = sys.argv[sys.argv.index('-p')+1]
         name = path.split("\\")[-1]
         print(name)
-        initcommit(path)
+        initcommit(path, name)
         os.system('git remote add origin https://github.com/'+user+'/'+'')
-    instance.login()
-    instance.createRepo(path)
+        instance.login()
+        instance.createRepo(path)
     
 
 if __name__ == "__main__":
