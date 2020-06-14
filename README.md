@@ -1,7 +1,7 @@
 ## Requirements 
     Get python requirements
         - pip install -r requrements.txt
-
+        
     Download  a webdriver
         Chrome - [Chrome Web Driver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
         Firefox - [Firefox Web Driver](https://github.com/mozilla/geckodriver/releases)
