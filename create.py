@@ -1,14 +1,29 @@
 import os
 import sys
-from github import  Github
-from dot_env import dot_env
+from dotenv import load_dotenv
+from git import Git
+from local import initcommit
+
+load_dotenv(override = True)
 
 user = os.getenv("USERNAME")
 password = os.getenv("PASSwORD")
-path = os.getenv("FILEPATH")
+
+instance = Git(user,password)
 
 def create():
-    folderName = str(sys.argv[2])
-    projectType = str(sys.argv[1])
-    user = Github(username, password).get_user()
-    repo = user.create_repo(folderName)
+    if "-p" in sys.argv:
+        path = sys.argv[sys.argv.index('-p')]
+        name = path.split("\\")
+        print(name)
+        initcommit(path)
+        os.system('git remote add origin https://github.com/'+user+'/'+'')
+    instance.login()
+    instance.createRepo(path)
+    
+
+if __name__ == "__main__":
+    print("*********************** Porject Init Script **********************")
+    print("\n \n \n \n")
+    create()
+
