@@ -13,8 +13,8 @@ instance = Git(user,password)
 
 def create():
     if "-p" in sys.argv:
-        path = sys.argv[sys.argv.index('-p')]
-        name = path.split("\\")
+        path = sys.argv[sys.argv.index('-p')+1]
+        name = path.split("\\")[-1]
         print(name)
         initcommit(path)
         os.system('git remote add origin https://github.com/'+user+'/'+'')
