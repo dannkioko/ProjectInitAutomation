@@ -1,0 +1,1 @@
+setx path "%PATH%%cd%\chromedriver\windows\chromedriver.exe

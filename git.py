@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import  Keys
 from dotenv import load_dotenv
+import time
+import os
 
 class Git():
     def __init__(self, username, password):
@@ -24,5 +26,5 @@ class Git():
         self.driver.find_element_by_xpath('/html/body/div[1]/header/div[6]/details/summary').click()
         self.driver.find_element_by_xpath('/html/body/div[1]/header/div[6]/details/details-menu/a[1]').click()
         self.driver.find_element_by_xpath('//*[@id="repository_name"]').send_keys(projectName)
+        time.sleep(5)
         self.driver.find_element_by_xpath('//*[@id="new_repository"]/div[3]/button').click()
-

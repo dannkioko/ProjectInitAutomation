@@ -14,11 +14,10 @@ instance = Git(user,password)
 def create():
     if "-p" in sys.argv:
         path = sys.argv[sys.argv.index('-p')+1]
-        name = path.split("\\")[-1]
-        print(name)
-        initcommit(path, name)
+        foldername = path.split("\\")[-1]
+        initcommit(path, user, foldername)
         instance.login()
-        instance.createRepo(path)
+        instance.createRepo(foldername)
     
 
 if __name__ == "__main__":

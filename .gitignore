@@ -1,6 +1,3 @@
 env/
 .vscode/
-.gitignore
 .env
-addpath.bat
-Readme.md
